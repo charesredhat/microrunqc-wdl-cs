@@ -2,4 +2,4 @@ version: 1.2
 workflows:
 - name: microrunqc-test
   authors:
-    - name: Justin Paine
+    - name: Justin Payne
