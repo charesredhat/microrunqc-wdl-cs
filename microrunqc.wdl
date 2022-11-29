@@ -41,14 +41,14 @@ task trim {
     }
 
     runtime {
-        docker: "staphb/trimmomatic:0.39"
+        docker = "staphb/trimmomatic:0.39"
         cpu: 2
-        memory: "1024 MB"
+        memory = "1024 MB"
     }
 
     parameter_meta {
-        forward: "Paired-end reads, forward orientation"
-        reverse: "Paired-end reads, reverse orientation"
+        forward = "Paired-end reads, forward orientation"
+        reverse = "Paired-end reads, reverse orientation"
     }
 
 }
@@ -68,14 +68,14 @@ task assemble {
     }
 
     runtime {
-        docker: "staphb/skesa:2.4.0"
+        docker = "staphb/skesa:2.4.0"
         cpu: 8
-        memory: "4096 MB"
+        memory = "4096 MB"
     }
 
     parameter_meta {
-        forward: "Paired-end reads, forward orientation"
-        reverse: "Paired-end reads, reverse orientation"
+        forward = "Paired-end reads, forward orientation"
+        reverse = "Paired-end reads, reverse orientation"
     }
 
 }
@@ -94,13 +94,13 @@ task profile {
     }
 
     runtime {
-        docker: "staphb/mlst:2.23.0"
+        docker = "staphb/mlst:2.23.0"
         cpu: 4
-        memory: "2048 MB"
+        memory = "2048 MB"
     }
 
     parameter_meta {
-        assembly: "Contigs from draft assembly"
+        assembly = "Contigs from draft assembly"
     }
 }
 
@@ -118,13 +118,13 @@ task concatenate {
     }
 
     runtime {
-        docker: "cfsanbiostatistics/table-ops:latest"
+        docker = "cfsanbiostatistics/table-ops:latest"
         cpu: 1
-        memory: "512 MB"
+        memory = "512 MB"
     }
 
     parameter_meta {
-        results: "List of MLST results"
+        results = "List of MLST results"
     }
 }
 
