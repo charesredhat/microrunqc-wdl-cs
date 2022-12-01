@@ -18,7 +18,7 @@ workflow microrunqc {
     call concatenate { input:profiles=profile.profil }
 
     meta {
-        author: "Justin Payne, Errol Strain, Jayanthi Gangiredla"
+        String author = "Justin Payne, Errol Strain, Jayanthi Gangiredla"
         email: "justin.payne@fda.hhs.gov, errol.strain@fda.hhs.gov, jayanthi.gangiredla@fda.hhs.gov"
         description: "a quality control pipeline, the WDL version of GalaxyTrakr's MicroRunQC"
     }
