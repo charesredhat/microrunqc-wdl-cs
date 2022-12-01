@@ -19,8 +19,8 @@ workflow microrunqc {
 
     meta {
         String author = "Justin Payne, Errol Strain, Jayanthi Gangiredla"
-        email: "justin.payne@fda.hhs.gov, errol.strain@fda.hhs.gov, jayanthi.gangiredla@fda.hhs.gov"
-        description: "a quality control pipeline, the WDL version of GalaxyTrakr's MicroRunQC"
+        Strign email = "justin.payne@fda.hhs.gov, errol.strain@fda.hhs.gov, jayanthi.gangiredla@fda.hhs.gov"
+        String description = "a quality control pipeline, the WDL version of GalaxyTrakr's MicroRunQC"
     }
 
 
@@ -73,14 +73,14 @@ task assemble {
     }
 
     runtime {
-        docker: "staphb/skesa:2.4.0"
+        String docker = "staphb/skesa:2.4.0"
         cpu: 8
-        memory: "4096 MB"
+        String memory = "4096 MB"
     }
 
     parameter_meta {
-        forward: "Paired-end reads, forward orientation"
-        reverse: "Paired-end reads, reverse orientation"
+        String forward = "Paired-end reads, forward orientation"
+        String reverse = "Paired-end reads, reverse orientation"
     }
 
 }
@@ -95,13 +95,13 @@ task profile {
     }
 
     output {
-        File profil = "profile.tsv"
+        String File profil = "profile.tsv"
     }
 
     runtime {
-        docker: "staphb/mlst:2.23.0"
+        String docker = "staphb/mlst:2.23.0"
         cpu: 4
-        memory: "2048 MB"
+        String memory = "2048 MB"
     }
 
     parameter_meta {
