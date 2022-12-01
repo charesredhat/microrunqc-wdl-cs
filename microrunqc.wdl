@@ -46,9 +46,9 @@ task trim {
     }
 
     runtime {
-        docker: "staphb/trimmomatic:0.39"
+        String docker = "staphb/trimmomatic:0.39"
         cpu: 2
-        memory: "1024 MB"
+        String memory = "1024 MB"
     }
 
     parameter_meta {
@@ -105,7 +105,7 @@ task profile {
     }
 
     parameter_meta {
-        assembly: "Contigs from draft assembly"
+        String assembly = "Contigs from draft assembly"
     }
 }
 
@@ -123,12 +123,12 @@ task concatenate {
     }
 
     runtime {
-        docker: "cfsanbiostatistics/table-ops:latest"
+        String docker = "cfsanbiostatistics/table-ops:latest"
         cpu: 1
-        memory: "512 MB"
+        String memory = "512 MB"
     }
 
     parameter_meta {
-        results: "List of MLST results"
+        String results = "List of MLST results"
     }
 }
