@@ -47,13 +47,13 @@ task trim {
 
     runtime {
         String docker = "staphb/trimmomatic:0.39"
-        cpu: 2
+        Int? cpu = 2
         String memory = "1024 MB"
     }
 
     parameter_meta {
-        forward: "Paired-end reads, forward orientation"
-        reverse: "Paired-end reads, reverse orientation"
+        String forward = "Paired-end reads, forward orientation"
+        String reverse = "Paired-end reads, reverse orientation"
     }
 
 }
@@ -74,7 +74,7 @@ task assemble {
 
     runtime {
         String docker = "staphb/skesa:2.4.0"
-        cpu: 8
+        Int cpu = 8
         String memory = "4096 MB"
     }
 
@@ -100,7 +100,7 @@ task profile {
 
     runtime {
         String docker = "staphb/mlst:2.23.0"
-        cpu: 4
+        Int cpu = 4
         String memory = "2048 MB"
     }
 
@@ -124,7 +124,7 @@ task concatenate {
 
     runtime {
         String docker = "cfsanbiostatistics/table-ops:latest"
-        cpu: 1
+        Int? cpu = 1
         String memory = "512 MB"
     }
 
